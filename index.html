@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6A3DF0">
+  <meta name="description" content="YouMeLab — игры, которые помогают узнавать друг друга, смеяться и создавать новые истории вместе.">
+  <meta name="robots" content="noindex, nofollow"><!-- УДАЛИТЬ ПОСЛЕ УТВЕРЖДЕНИЯ ПОЛИТИКИ И ЗАПУСКА -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>YouMeLab — Те же люди. Новые яркие истории.</title>
+  <style>
+    :root { --purple:#6A3DF0; --purple-dark:#4D2CB3; --magenta:#E43D8F; --lilac:#EBDFFF; --ink:#251C3D; --muted:#665D78; --line:#EBE7F3; --bg:#FCFBFE; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--bg);font-family:Rubik,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid var(--purple);outline-offset:5px;border-radius:8px}
+    .wrap{width:min(1120px,calc(100% - 48px));margin-inline:auto}
+    header{background:rgba(255,255,255,.9);border-bottom:1px solid var(--line)}
+    .nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:inline-flex;align-items:center;flex-shrink:0}
+    .brand img{width:185px;max-height:68px;object-fit:contain;display:block}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:650}
+    .nav-links a:hover,.footer-links a:hover{color:var(--purple)}
+    .contact-nav{background:#F1ECFF;border:1px solid #E7DFFF;border-radius:999px;padding:11px 18px;color:var(--purple-dark)}
+    .hero{position:relative;overflow:hidden;padding:98px 0 104px;background:radial-gradient(ellipse 60% 80% at 85% 20%,#F3E5FE 0%,transparent 64%),radial-gradient(ellipse 40% 60% at 12% 94%,#FFF1F8 0%,transparent 72%),#fff}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-dark);font-size:12px;font-weight:800}
+    .eyebrow::before{content:"";width:20px;height:3px;background:var(--magenta);border-radius:3px}
+    h1{font-size:clamp(39px,5vw,66px);font-weight:850;letter-spacing:-.048em;line-height:1.11;margin:23px 0 24px;max-width:680px}
+    .accent{background:linear-gradient(100deg,var(--purple),var(--magenta));color:transparent;-webkit-background-clip:text;background-clip:text}
+    .lead{max-width:585px;font-size:19px;line-height:1.7;color:var(--muted);margin:0 0 34px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;min-height:50px;gap:9px;border-radius:14px;padding:14px 23px;background:var(--purple);color:white;font-weight:750;box-shadow:0 8px 20px #6A3DF029;transition:transform .15s,background .15s}
+    .btn:hover{transform:translateY(-2px);background:var(--purple-dark)}
+    .hero-art{position:relative;min-height:420px}
+    .orbit{position:absolute;inset:35px 24px 5px 30px;border:2px dashed #DBC9FA;border-radius:40%;transform:rotate(-14deg)}
+    .tile{position:absolute;width:72%;height:210px;background:#fff;border:1px solid #E7E0F1;box-shadow:0 30px 72px #3622701A;border-radius:28px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+    .tile::before{content:"";width:45px;height:7px;border-radius:99px;background:linear-gradient(90deg,var(--purple),var(--magenta))}
+    .tile p{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1.25;margin:0}
+    .tile span{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:750}
+    .tile.one{right:3%;top:28px;transform:rotate(10deg)}
+    .tile.two{left:0;top:124px;transform:rotate(-9deg);background:#F9F4FF}
+    .tile.three{right:11%;top:232px;transform:rotate(7deg);background:#FFF4F9;height:170px}
+    section{scroll-margin-top:60px}
+    .products{padding:92px 0 98px}
+    h2{font-size:clamp(30px,3.4vw,43px);letter-spacing:-.038em;line-height:1.2;margin:15px 0 14px}
+    .section-intro{font-size:17px;color:var(--muted);line-height:1.7;max-width:650px;margin:0 0 36px}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .game{position:relative;overflow:hidden;border-radius:28px;border:1px solid var(--line);min-height:355px;padding:37px;display:flex;flex-direction:column;background:#fff}
+    .game::after{position:absolute;pointer-events:none;content:"";width:300px;height:300px;top:-110px;right:-115px;border-radius:50%;opacity:.85}
+    .game.never{background:#F1FAF6;border-color:#D8EEE4}
+    .game.never::after{background:radial-gradient(circle at 35% 35%,#FFF2B3,#D2EFE4)}
+    .game.who{background:#F8F4FF;border-color:#E9DEF9}
+    .game.who::after{background:radial-gradient(circle at 35% 35%,#F7D2CC,#E2D8FF)}
+    .game .state{z-index:1;align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.03em;border-radius:999px;padding:8px 14px;background:#fff;border:1px solid #E3DBE8}
+    .game h3{z-index:1;font-size:clamp(25px,2.7vw,35px);line-height:1.16;letter-spacing:-.037em;margin:50px 0 14px;max-width:310px}
+    .game p{z-index:1;color:#5E586D;font-size:16px;line-height:1.7;margin:0 0 18px;max-width:370px}
+    .game .foot{z-index:1;display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:12px}
+    .mini-tag{font-size:12px;letter-spacing:.04em;color:#736C7D;font-weight:800}
+    .sub-link{font-size:15px;font-weight:800;color:var(--purple-dark);text-decoration:underline;text-underline-offset:4px}
+    .about{padding:65px 0 85px;background:linear-gradient(145deg,#F8F2FF,#FEF7FB);border-block:1px solid #F1E9F5}
+    .about .about-grid{display:grid;grid-template-columns:.65fr 1fr;gap:55px;align-items:center}
+    .brand-line{width:80px;height:6px;background:linear-gradient(90deg,var(--purple),var(--magenta));border-radius:100px;margin-bottom:20px}
+    .about-copy{font-size:19px;line-height:1.75;color:#514764;margin:0}
+    footer{background:#fff;padding:36px 0 47px}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-brand{font-weight:850;font-size:18px;color:var(--purple-dark)}
+    .footer-brand small{display:block;color:var(--muted);font-weight:500;font-size:13px;margin-top:6px}
+    .footer-links{display:flex;align-items:center;gap:24px;font-size:14px;color:var(--muted)}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-art{max-width:480px;width:100%;margin:auto;min-height:320px}.tile{height:170px;padding:21px}.tile p{font-size:21px}.tile.two{top:100px}.tile.three{top:183px;height:130px}.orbit{inset:10px}.about .about-grid{grid-template-columns:1fr;gap:12px}}
+    @media(max-width:620px){.wrap{width:min(100% - 32px,1120px)}.nav{min-height:75px}.brand img{width:150px;max-height:58px}.nav-links{gap:13px}.nav-links a{font-size:13px}.contact-nav{padding:9px 12px}.hero{padding:65px 0 58px}.hero-art{min-height:270px;max-width:370px}.tile{width:71%;height:145px;padding:20px;border-radius:20px}.tile p{font-size:17px}.tile.one{top:10px}.tile.two{top:74px}.tile.three{top:155px;height:104px}.tile span{font-size:9px}.hero .lead{font-size:17px}.products{padding:65px 0}.cards{grid-template-columns:1fr}.game{min-height:300px;padding:28px}.game h3{margin-top:42px}.about{padding:50px 0 62px}.about-copy{font-size:17px}.footer-links{flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="YouMeLab — на главную"><img src="assets/YouMeLab_logo_on_light.svg" alt="YouMeLab" width="185" height="62"></a>
+      <nav class="nav-links" aria-label="Основная навигация"><a href="#games">Наши игры</a><a class="contact-nav" href="mailto:support@you-me-lab.com">Связаться</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Игры от YouMeLab</div>
+          <h1 id="hero-title">Те же люди.<br><span class="accent">Новые яркие истории.</span></h1>
+          <p class="lead">Мы создаём игры, которые помогают проводить время вместе, узнавать друг друга с новой стороны и превращать обычные встречи в яркие воспоминания.</p>
+          <a class="btn" href="#games">Посмотреть игры <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"></div>
+          <div class="tile one"><span>01 / вместе</span><p>Больше поводов<br>улыбаться</p></div>
+          <div class="tile two"><span>02 / истории</span><p>Вопросы,<br>которые сближают</p></div>
+          <div class="tile three"><span>03 / эмоции</span><p>Вечер, который<br>запомнится</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="products" id="games" aria-labelledby="games-title">
+      <div class="wrap">
+        <div class="eyebrow">Наши приложения</div>
+        <h2 id="games-title">Выбирайте игру под настроение</h2>
+        <p class="section-intro">Для вечера с друзьями, совместных поездок и разговоров, которые начинаются с одного вопроса.</p>
+        <div class="cards">
+          <article class="game never">
+            <span class="state">Уже в RuStore</span>
+            <h3>Я никогда не — Never Me</h3>
+            <p>Неожиданные признания и весёлые истории. Выбирайте категории и узнавайте друг друга лучше.</p>
+            <div class="foot"><a class="sub-link" href="https://www.rustore.ru/catalog/app/com.youmelab.neverme" target="_blank" rel="noopener noreferrer">Открыть в RuStore ↗</a><span class="mini-tag">18+</span></div>
+          </article>
+          <article class="game who">
+            <span class="state">Готовится к выходу</span>
+            <h3>Кто скорее? Игра для компании</h3>
+            <p>Читайте вопросы, обсуждайте и выбирайте, кому в вашей компании больше всего подходит описание.</p>
+            <div class="foot"><span class="mini-tag">18+ · Для компании друзей</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div><div class="brand-line"></div><div class="eyebrow">Сделано с любовью</div><h2 id="about-title">Игры, которые объединяют</h2></div>
+        <p class="about-copy">Мы — YouMeLab. С любовью придумываем игры, которые делают общение живее, дарят эмоции и помогают создавать свои истории. Каждая игра — ещё одна причина собраться вместе.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">YouMeLab<small>Те же люди. Новые яркие истории.</small></div>
+      <div class="footer-links"><a href="mailto:support@you-me-lab.com">support@you-me-lab.com</a><span>© 2026 YouMeLab</span></div>
+    </div>
+  </footer>
+</body>
+</html>

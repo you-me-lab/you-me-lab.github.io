@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+  <title id="title">YouMeLab favicon</title>
+  <desc id="desc">Rounded-square website icon using the canonical YM geometry.</desc>
+  <defs>
+    <linearGradient id="badge" x1="8%" y1="92%" x2="92%" y2="8%">
+      <stop offset="0" stop-color="#3319D9"/>
+      <stop offset="0.28" stop-color="#4519D9"/>
+      <stop offset="0.48" stop-color="#6A16D7"/>
+      <stop offset="0.63" stop-color="#A519C9"/>
+      <stop offset="0.78" stop-color="#E51FB3"/>
+      <stop offset="1" stop-color="#FF25A5"/>
+    </linearGradient>
+    <linearGradient id="underline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF28AF"/>
+      <stop offset="1" stop-color="#F7219E"/>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="100" width="1050" height="1050" rx="230" fill="url(#badge)"/>
+  <path d="M 481 735 L 481 765 L 477 768 L 399 768 L 396 766 L 394 639 L 276 469 L 276 460 L 369 459 L 374 461 L 439 563 L 442 563 L 459 537 L 516 461 L 520 459 L 606 459 L 609 461 L 608 469 L 483 641 L 481 651 Z" fill="#FFFFFF"/>
+  <path d="M 882 743 L 882 600 L 852 634 L 800 699 L 788 705 L 775 704 L 766 697 L 698 605 L 695 605 L 695 755 L 690 758 L 623 758 L 619 755 L 619 462 L 621 459 L 664 458 L 690 459 L 694 461 L 744 529 L 765 561 L 774 571 L 783 586 L 788 584 L 829 529 L 885 460 L 894 458 L 967 458 L 972 461 L 973 762 L 969 767 L 886 767 L 882 763 Z" fill="#FFFFFF"/>
+  <rect x="504" y="788" width="244" height="62" rx="31" fill="url(#underline)"/>
+</svg>
