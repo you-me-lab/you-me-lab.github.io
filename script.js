@@ -1,3 +1,16 @@
+// Keep shared URLs clean without affecting functional query parameters or page anchors.
+(() => {
+  const url = new URL(window.location.href);
+  const trackingKeys = new Set(['fbclid', 'gclid', 'dclid', 'msclkid', 'yclid', 'igshid']);
+  const toRemove = [...url.searchParams.keys()].filter(key =>
+    key.toLowerCase().startsWith('utm_') || trackingKeys.has(key.toLowerCase())
+  );
+  if (toRemove.length) {
+    toRemove.forEach(key => url.searchParams.delete(key));
+    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash);
+  }
+})();
+
 const menuButton = document.querySelector('.menu-button');
 const mobileMenu = document.querySelector('.mobile-menu');
 

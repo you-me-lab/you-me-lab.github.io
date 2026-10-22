@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://you-me-lab.com/sitemap.xml
